@@ -1,16 +1,43 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from './App.jsx'
+import App from "./App.jsx";
+import {
+  Homepage,
+  Exchanges,
+  Cryptocurrencies,
+  CryptoDetails,
+  News,
+} from "./components";
+import 'antd/dist/antd.js'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/exchanges",
+        element: <Exchanges />,
+      },
+      {
+        path: "/cryptocurrencies",
+        element: <Cryptocurrencies />,
+      },
+      {
+        path: "/crypto/:coinId",
+        element: <CryptoDetails />,
+      },
+      {
+        path: "/news",
+        element: <News />,
+      },
+    ],
   },
 ]);
 
