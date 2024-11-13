@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import "antd/dist/reset.css";
 import App from "./App.jsx";
 import {
   Homepage,
@@ -10,7 +11,7 @@ import {
   CryptoDetails,
   News,
 } from "./components";
-import 'antd/dist/antd.js'
+
 
 const router = createBrowserRouter([
   {
